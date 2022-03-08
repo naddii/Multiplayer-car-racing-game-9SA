@@ -186,7 +186,16 @@ showLife() {
   noStroke();
   pop();
 }
-showLeaderboard() {
+  showfuelbar() {
+  push();
+  image(lifeImage, width / 2 - 130, height - player.positionY - 350, 20, 20);
+  fill("white");
+  rect(width / 2 - 100, height - player.positionY - 350, 185, 20);
+  fill("green");
+  rect(width / 2 - 100, height - player.positionY -350, player.fuel, 20);
+  noStroke();
+  pop();
+}showLeaderboard() {
   var leader1, leader2;
   var players = Object.values(allPlayers);
   if (
@@ -255,4 +264,13 @@ showRank() {
     confirmButtonText: "Ok"
   });
 }
-}
+ gameover() {
+  swal({
+    title: `GAMEOVER`,
+    text: "BAD JOB",
+    imageUrl:
+      "https://raw.githubusercontent.com/vishalgaddam873/p5-multiplayer-car-race-game/master/assets/cup.png",
+    imageSize: "100x100",
+    confirmButtonText: "Ok"
+  });
+}}
